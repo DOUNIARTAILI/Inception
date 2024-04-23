@@ -1,0 +1,28 @@
+services:
+  my-nginx:
+    container_name: my-nginx
+    build: ./requirements/nginx
+    image: my-nginx
+    ports:
+      - 443:443
+    networks:
+      - inception
+    restart: always
+    volumes:
+      - /home/drtaili/data/wordpress:/var/www/html
+  my-wordpress:
+    container_name: my-wordpress
+    build: ./requirements/wordpress
+    image: my-wordpress
+    ports:
+      - 9000:9000
+    restart: always
+    depends_on:
+      - my-nginx
+    volumes:
+      - /home/drtaili/data/wordpress:/var/www/html
+    networks:
+      - inception
+
+networks:
+    inception:
