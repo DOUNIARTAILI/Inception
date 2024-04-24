@@ -1,8 +1,7 @@
-CREATE USER IF NOT EXISTS 'drtaili'@'localhost' IDENTIFIED BY 'strong_password';
-GRANT ALL PRIVILEGES ON *.* TO 'drtaili'@'localhost' WITH GRANT OPTION;
-CREATE DATABA.
-
-CREATE USER IF NOT EXISTS 'user00'@'%' IDENTIFIED BY 'user_password';
-GRANT ALL PRIVILEGES ON mydatabase.* TO 'user00'@'%';
-
+CREATE DATABASE wordpress_db;
+CREATE USER 'wordpress_user'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON wordpress_db.* TO wordpress_user@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
+
+
+
